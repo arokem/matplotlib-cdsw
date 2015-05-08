@@ -16,8 +16,16 @@ for fieldname in reader.fieldnames:
 
 rows = []
 for row in reader:
-	# Convert timestamp from a string to a date:
-	row['timestamp'] = datetime.strptime(row['timestamp'], '%Y-%m-%d %H:%M:%S')
-	rows.append(row)
-	for fieldname, value in row.items():
-		columns[fieldname].append(value)
+    # Convert timestamp from a string to a date:
+    row['timestamp'] = datetime.strptime(row['timestamp'], '%Y-%m-%d %H:%M:%S')
+    # Convert size from a string to an integer:
+    row['size'] = int(row['size'])
+    rows.append(row)
+
+# Sort these things, so that they give you nice time-series
+sort_rows = sorted(rows, key=lambda row: row['timestamp'], reverse=False)
+
+rows = sort_rows
+for row in sort_rows:
+    for fieldname, value in row.items():
+        columns[fieldname].append(value)
