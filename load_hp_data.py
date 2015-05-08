@@ -22,7 +22,7 @@ for row in reader:
     row['size'] = int(row['size'])
     rows.append(row)
 
-# Sort these things, so that they give you nice time-series
+# Sort these things, so that they give you nice ordered time-series
 sort_rows = sorted(rows, key=lambda row: row['timestamp'], reverse=False)
 
 rows = sort_rows

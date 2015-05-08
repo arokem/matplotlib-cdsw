@@ -23,11 +23,12 @@ ax.set_ylabel('Size of the edit')
 plt.show()
 
 
-# Challenge: plot the relationship between edit size. Use 
+# Challenge: Is edit size related to how long it's been since the last edit? 
+# => Plot the relationship between edit size and the time since the last edit:
 
-## Hint 1: 
+## Hint 1: the number of seconds between two edits is: 
 
-#delta_time1 = hp.columns['timestamp'][1] - hp.columns['timestamp'][0]
+#delta_time1 = (hp.columns['timestamp'][1] - hp.columns['timestamp'][0]).total_seconds()
 
 ## Hint 2: 
 
@@ -36,3 +37,9 @@ plt.show()
 
 # ax.plot([1,2,3], [2,4,8], '.')
 # ax.plot([1,2,3], [2,4,8], 'r.')
+
+# And see online documentation here: 
+# http://matplotlib.org/api/pyplot_summary.html
+# http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot
+
+

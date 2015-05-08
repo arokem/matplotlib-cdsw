@@ -18,5 +18,7 @@ ax.set_title('Edit size distribution')
 
 # Maybe don't really need that axis to be so long:
 # ax.set_xlim([0, 200000])
-
 plt.show()
+
+## Challenge : A 'mega-user' is a user with more than 1000 edits. 
+# Plot a bar chart with the maximal edit size for each one of the mega-users
