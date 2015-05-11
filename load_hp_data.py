@@ -6,7 +6,7 @@ A module for loading data from the Harry Potter wikipedia data set
 import csv
 from datetime import datetime
 
-f = open('hp_wiki.tsv', 'r')
+f = open('hp_wiki.tsv', 'r', encoding='utf-8')
 reader = csv.DictReader(f, delimiter='\t')
 
 columns = {}
